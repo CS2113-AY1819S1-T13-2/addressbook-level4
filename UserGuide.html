@@ -14,12 +14,12 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#creating-a-new-thread-code-create-code">3.2. Creating a new thread : <code>create</code></a></li>
-<li><a href="#replying-to-a-thread-code-reply-code">3.3. Replying to a thread : <code>reply</code></a></li>
-<li><a href="#finding-a-thread-code-find-code">3.4. Finding a thread : <code>find</code></a></li>
-<li><a href="#liking-a-thread-code-like-code">3.5. Liking a thread : <code>like</code></a></li>
-<li><a href="#sorting-a-thread-by-most-like-code-sortdate-code">3.6. Sorting a thread by most like : <code>sortdate</code></a></li>
-<li><a href="#sorting-a-thread-by-most-like-code-sortlike-code">3.7. Sorting a thread by most like : <code>sortlike</code></a></li>
+<li><a href="#creating-a-new-forumthread-code-create-code">3.2. Creating a new forumThread : <code>create</code></a></li>
+<li><a href="#replying-to-a-forumthread-code-reply-code">3.3. Replying to a forumThread : <code>reply</code></a></li>
+<li><a href="#finding-a-forumthread-code-find-code">3.4. Finding a forumThread : <code>find</code></a></li>
+<li><a href="#liking-a-forumthread-code-like-code">3.5. Liking a forumThread : <code>like</code></a></li>
+<li><a href="#sorting-a-forumthread-by-most-like-code-sortdate-code">3.6. Sorting a forumThread by most like : <code>sortdate</code></a></li>
+<li><a href="#sorting-a-forumthread-by-most-like-code-sortlike-code">3.7. Sorting a forumThread by most like : <code>sortlike</code></a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></li>
 <li><a href="#saving-the-data">3.9. Saving the data</a></li>
 <li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></li>
@@ -72,10 +72,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>find m/CS2113 java</code></strong> : finding threads associated with content, <code>java</code>, under module <code>CS2113</code></p>
 </li>
 <li>
-<p><strong><code>create m/CS2113 t/Is there mid-terms?</code></strong> : create a thread tittled as <code>Is there mid-terms?</code> under module <code>CS2113</code>.</p>
+<p><strong><code>create m/CS2113 t/Is there mid-terms?</code></strong> : create a forumThread tittled as <code>Is there mid-terms?</code> under module <code>CS2113</code>.</p>
 </li>
 <li>
-<p><strong><code>like m/CS2113 i/1</code></strong> : like the thread with <code>index 1</code> in module <code>CS2113</code></p>
+<p><strong><code>like m/CS2113 i/1</code></strong> : like the forumThread with <code>index 1</code> in module <code>CS2113</code></p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -120,9 +120,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="creating-a-new-thread-code-create-code"><a class="link" href="#creating-a-new-thread-code-create-code">3.2. Creating a new thread : <code>create</code></a></h3>
+<h3 id="creating-a-new-forumthread-code-create-code"><a class="link" href="#creating-a-new-forumthread-code-create-code">3.2. Creating a new forumThread : <code>create</code></a></h3>
 <div class="paragraph">
-<p>Create a new thread under a specific module<br>
+<p>Create a new forumThread under a specific module<br>
 Format: <code>create m/MODULE_NAME t/THREAD_NAME [c/REPLY_MESSAGE]&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
@@ -140,9 +140,9 @@ Format: <code>create m/MODULE_NAME t/THREAD_NAME [c/REPLY_MESSAGE]&#8230;&#8203;
 </div>
 </div>
 <div class="sect2">
-<h3 id="replying-to-a-thread-code-reply-code"><a class="link" href="#replying-to-a-thread-code-reply-code">3.3. Replying to a thread : <code>reply</code></a></h3>
+<h3 id="replying-to-a-forumthread-code-reply-code"><a class="link" href="#replying-to-a-forumthread-code-reply-code">3.3. Replying to a forumThread : <code>reply</code></a></h3>
 <div class="paragraph">
-<p>Reply to a thread under a specific thread.<br>
+<p>Reply to a forumThread under a specific forumThread.<br>
 Format: <code>reply m/MODULE_NAME i/THREAD_INDEX c/REPLY_MESSAGE</code></p>
 </div>
 <div class="paragraph">
@@ -160,7 +160,7 @@ Format: <code>reply m/MODULE_NAME i/THREAD_INDEX c/REPLY_MESSAGE</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="finding-a-thread-code-find-code"><a class="link" href="#finding-a-thread-code-find-code">3.4. Finding a thread : <code>find</code></a></h3>
+<h3 id="finding-a-forumthread-code-find-code"><a class="link" href="#finding-a-forumthread-code-find-code">3.4. Finding a forumThread : <code>find</code></a></h3>
 <div class="paragraph">
 <p>Finds a list of threads that match the given arguments.<br>
 Format: <code>find [m/MOD_CODE] keywords</code></p>
@@ -191,9 +191,9 @@ Format: <code>find [m/MOD_CODE] keywords</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="liking-a-thread-code-like-code"><a class="link" href="#liking-a-thread-code-like-code">3.5. Liking a thread : <code>like</code></a></h3>
+<h3 id="liking-a-forumthread-code-like-code"><a class="link" href="#liking-a-forumthread-code-like-code">3.5. Liking a forumThread : <code>like</code></a></h3>
 <div class="paragraph">
-<p>Gives like to a thread under a specific module<br>
+<p>Gives like to a forumThread under a specific module<br>
 Format: <code>like m/MODULE_NAME i/THREAD_INDEX</code></p>
 </div>
 <div class="paragraph">
@@ -203,13 +203,13 @@ Format: <code>like m/MODULE_NAME i/THREAD_INDEX</code></p>
 <ul>
 <li>
 <p><code>like m/CS2113 i/1</code><br>
-give like to thread index 1 under module CS2113</p>
+give like to forumThread index 1 under module CS2113</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-a-thread-by-most-like-code-sortdate-code"><a class="link" href="#sorting-a-thread-by-most-like-code-sortdate-code">3.6. Sorting a thread by most like : <code>sortdate</code></a></h3>
+<h3 id="sorting-a-forumthread-by-most-like-code-sortdate-code"><a class="link" href="#sorting-a-forumthread-by-most-like-code-sortdate-code">3.6. Sorting a forumThread by most like : <code>sortdate</code></a></h3>
 <div class="paragraph">
 <p>Sort the threads under a specific module by date.<br>
 Format: <code>sortdate m/MODULE_NAME</code></p>
@@ -226,7 +226,7 @@ Format: <code>sortdate m/MODULE_NAME</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-a-thread-by-most-like-code-sortlike-code"><a class="link" href="#sorting-a-thread-by-most-like-code-sortlike-code">3.7. Sorting a thread by most like : <code>sortlike</code></a></h3>
+<h3 id="sorting-a-forumthread-by-most-like-code-sortlike-code"><a class="link" href="#sorting-a-forumthread-by-most-like-code-sortlike-code">3.7. Sorting a forumThread by most like : <code>sortlike</code></a></h3>
 <div class="paragraph">
 <p>Sort the threads under a specific module by date.<br>
 Format: <code>sortlike m/MODULE_NAME</code></p>
@@ -308,4 +308,4 @@ e.g <code>sortdate m/CS2113</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-09-28 04:57:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 16:30:10 UTC</div></div></div></body></html>

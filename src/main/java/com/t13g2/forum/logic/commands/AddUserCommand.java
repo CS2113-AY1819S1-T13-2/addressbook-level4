@@ -28,7 +28,7 @@ public class AddUserCommand extends Command {
         + PREFIX_USER_PASSWORD + "1234 ";
 
 
-    public static final String MESSAGE_SUCCESS = "WELCOME : %1$s. You had been successfully been registered.";
+    public static final String MESSAGE_SUCCESS = "%1$s had been successfully been registered. Please login!";
     //public static final String MESSAGE_FAIL = "No user named %1$s found or password is wrong";
     public static final String MESSAGE_DUPLICATE_PERSON = "This user name already exists, Please use another name.";
     private final User userToAdd;
@@ -42,33 +42,25 @@ public class AddUserCommand extends Command {
     @Override
     public CommandResult execute(Model model, CommandHistory history) throws CommandException {
         requireNonNull(model);
-
+        boolean exist = false;
         try (UnitOfWork unitOfWork = new UnitOfWork()) {
-            boolean exist = false;
-            try {
-                unitOfWork.getUserRepository().getUserByUsername(userToAdd.getUsername());
-                exist = true;
-            } catch (EntityDoesNotExistException ex) {
-                ex.printStackTrace();
-            }
-            if (!exist) {
-                unitOfWork.getUserRepository().addUser(userToAdd);
-                unitOfWork.commit();
-            }
-            // try {
-            //     if(unitOfWork.getUserRepository().getUserByUsername(this.userToAdd.getUsername()) == null) {
-            //         unitOfWork.getUserRepository().addUser(userToAdd);
-            //         unitOfWork.commit();
-            //     }
-            //     else {
-            //         throw new CommandException(MESSAGE_DUPLICATE_PERSON);
-            //     }
-            // } catch (Exception e) {
-            //     e.printStackTrace();
-            // }
+            unitOfWork.getUserRepository().getUserByUsername(userToAdd.getUsername());
+            exist = true;
+        } catch (EntityDoesNotExistException e) {
+            exist = false;
         } catch (Exception e) {
             e.printStackTrace();
+        }
+
+        if (!exist) {
+            try (UnitOfWork unitOfWork = new UnitOfWork()) {
+                unitOfWork.getUserRepository().addUser(userToAdd);
+                unitOfWork.commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return new CommandResult(String.format(MESSAGE_SUCCESS, userToAdd.getUsername()));
     }
 }
+

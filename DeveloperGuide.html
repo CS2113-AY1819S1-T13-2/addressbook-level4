@@ -807,86 +807,27 @@ if the user runs more than one instance of the program.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the admin management behaves at each step.</p>
+<p>Given below is an example usage scenario and how the user management behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>This Section below until Admin Management need to be edited :(</p>
+<p>-----------------------------------------------------------------------------------------------------------------------------------------------------<br>
+Given below is an example usage scenario and how the user management can be operated by user at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The admin launches the application, executes <code>announce aTitle/Urgent! aContent/System maintenance from 3PM to 6PM.</code> to add the announcement to storage file. The <code>announce</code> command calls <code>UnitOfWork.getAnnouncementRepository.addAnnouncement(announcement)</code> and then <code>UnitOfWork.commit()</code>, causing a modified forum book state to be saved into <code>ForumBookStorage</code></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SDAnnounce.png" alt="SDAnnounce" width="800">
-</div>
+<p>Step 1. The user executes <code>addUser uName/UserName uPass/password</code> to add a new user into forum userStorage file. The addUser command calls 'unitOfWork.getUserRepository().getUserByUsername(userToAdd.getUsername())' to check if the name entered by the user is available. If there is not duplicate, User can be registered. If the registration is successful, addUser command calls <code>UnitOfWork.commit()</code> to save the modified forum book state into UserStorage.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The admin/user executes <code>checkAnnounce</code> to check for the latest announcement in storage file. The <code>checkAnnounce</code> calls the <code>UnitOfWork.getAnnouncementRepository().getLatestAnnouncement()</code> which returns an announcement to be shown in the message dialog.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SDCheckAnnounce.png" alt="SDCheckAnnounce" width="200">
-</div>
+<p>Step 2. The user executes <code>login uName/UserName uPass/password</code> to login to the forum. The login command calls 'unitOfWork.getUserRepository().authenticate(userName, userPassword)' to check if the login can be authorise. If success, login command calls <code>Context.getInstance().setCurrentUser(exist)</code> to create an instance for the authorised user.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. The admin executes <code>block uName/john</code> to block john from creating new threads or comments. The <code>block</code> calls <code>User.setIsBlock(true)</code> and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be saved into <code>ForumBookStorage</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SDBlockUserFromCreating.png" alt="SDBlockUserFromCreating" width="200">
-</div>
+<p>Step 3. The user executes <code>logout</code> to exit the forum or to switch user, logout command calls 'EventsCenter.getInstance().post(new UserLoginEvent("", false, false))' to close the instance created by the user. Next/ another user is able to login after a successful logout.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. The admin executes <code>setAdmin uName/john set/true</code> to set a certain user as admin or to revert an admin to user. The <code>setAdmin</code> calls the <code>User.setAdmin(true)</code> and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be saved into <code>ForumBookStorage</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SDSetAdmin.png" alt="SDSetAdmin" width="200">
-</div>
+<p>ToDo:
+Step 4. The user executes `updateUserComment ` to update the uPass.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. The admin executes <code>createModule mCode/CS2113 mTitle/Software Engineering and OOP</code> to create the specific module. The <code>createModule</code> calls the <code>UnitOfWork.getModuleRepository().addModule(module)</code> and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be save into <code>ForumBookStorage</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SDCreateModule.png" alt="SDCreateModule" width="200">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The admin executes <code>deleteModule mCode/CS2113</code> to delete specific module. The <code>deleteModule</code> calls the <code>UnitOfWork.getModuleRepository().removeModule(module);</code> and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be save into <code>ForumBookStorage</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SDDeleteModule.png" alt="SDDeleteModule" width="200">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 7. The admin executes <code>updatePass uName/john uPass/098</code> to update the user john&#8217;s password. The <code>updatePass</code> calls the <code>UnitOfWork.getUserRepository().updateUser(user)</code> and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be save into <code>ForumBookStorage</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SDUpdatePass.png" alt="SDUpdatePass" width="200">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 8. The admin executes <code>deleteUser uName/john</code> to delete the user john. The <code>deleteUser</code> calls the ` UnitOfWork.getUserRepository().deleteUser(userToDelete)` and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be save into <code>ForumBookStorage</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/SDDeleteUser.png" alt="SDDeleteUser" width="200">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the syntax of a command is wrong, the program will prompt the user to try again and show a suggested command format.
-</td>
-</tr>
-</table>
+<p>-----------------------------------------------------------------------------------------------------------------------------------------------------<br></p>
 </div>
 </div>
 </div>
@@ -2499,4 +2440,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 12:14:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 12:43:19 UTC</div></div></div></body></html>

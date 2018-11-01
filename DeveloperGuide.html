@@ -85,11 +85,20 @@
 <li><a href="#blocking-user-from-posting">H.4. Blocking user from posting</a></li>
 <li><a href="#setting-a-user-as-admin-or-setting-an-admin-as-user">H.5. Setting a user as admin or setting an admin as user</a></li>
 <li><a href="#creating-a-module">H.6. Creating a module</a></li>
-<li><a href="#deleting-a-module">H.7. Deleting a module</a></li>
-<li><a href="#updating-password">H.8. Updating password</a></li>
-<li><a href="#deleting-a-user">H.9. Deleting a user</a></li>
-<li><a href="#saving-data">H.10. Saving data</a></li>
-<li><a href="#login">H.11. Login</a></li>
+<li><a href="#creating-a-thread">H.7. Creating a thread</a></li>
+<li><a href="#creating-a-comment">H.8. Creating a comment</a></li>
+<li><a href="#updating-a-thread-title">H.9. Updating a thread title</a></li>
+<li><a href="#updating-a-comment-content">H.10. Updating a comment content</a></li>
+<li><a href="#deleting-a-thread">H.11. Deleting a thread</a></li>
+<li><a href="#deleting-a-comment">H.12. Deleting a comment</a></li>
+<li><a href="#listing-all-modules">H.13. Listing all modules</a></li>
+<li><a href="#selecting-a-module-to-list-all-threads">H.14. Selecting a module to list all threads</a></li>
+<li><a href="#selecting-a-thread-to-list-all-comments">H.15. Selecting a thread to list all comments</a></li>
+<li><a href="#deleting-a-module">H.16. Deleting a module</a></li>
+<li><a href="#updating-password">H.17. Updating password</a></li>
+<li><a href="#deleting-a-user">H.18. Deleting a user</a></li>
+<li><a href="#saving-data">H.19. Saving data</a></li>
+<li><a href="#login">H.20. Login</a></li>
 </ul>
 </li>
 </ul>
@@ -2514,7 +2523,260 @@ Expected: No module will be added. Error details shown in the result display pan
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">H.7. Deleting a module</a></h3>
+<h3 id="creating-a-thread"><a class="link" href="#creating-a-thread">H.7. Creating a thread</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creating a thread under certain module by user or admin.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must login to proceed. User should not be blocked by admin.</p>
+</li>
+<li>
+<p>Test case: <code>createThread mCode/CS2113 tTitle/Exam Information cContent/All the best for the final guys</code><br>
+Expected: A new thread will be added to the ForumThreadStorage, and a success message will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: <code>createThread mCode/ tTitle/ cContent/</code><br>
+Expected: No module will be added. Error details shown in the result display panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-a-comment"><a class="link" href="#creating-a-comment">H.8. Creating a comment</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creating a comment under certain forum thread by user or admin.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must login to proceed. User should not be blocked by admin.</p>
+</li>
+<li>
+<p>Test case: <code>createComment tId/1 cContent/This is a new comment</code><br>
+Expected: A new thread will be added to the CommentStorage, and a success message will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: <code>createComment tId/ cContent/</code><br>
+Expected: No comment will be added. Error details shown in the result display panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="updating-a-thread-title"><a class="link" href="#updating-a-thread-title">H.9. Updating a thread title</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Updating the title of a forum thread by thread creator or admin.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must login to proceed. User is the owner/creator of the forum thread.</p>
+</li>
+<li>
+<p>Test case: (If thread ID 123 is under current module) + <code>updateThread tId/123 tTitle/This is a new title</code><br>
+Expected: The new thread title will be updated in the ForumThreadStorage, and a success message will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: (If thread ID 123 does not exist in the forum book) + <code>updateThread tId/123 tTitle/This is a new title</code><br>
+Expected: No thread title will be updated. Error details of invalid thread id will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: (If thread ID 123 is not under current module) + <code>updateThread tId/123 tTitle/This is a new title</code><br>
+Expected: No thread title will be updated. Error details of entity is not under scope will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: <code>updateThread tId/ tTitle/</code><br>
+Expected: No thread title will be updated. Error details shown in the result display panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="updating-a-comment-content"><a class="link" href="#updating-a-comment-content">H.10. Updating a comment content</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Updating the content of a comment by comment creator or admin.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must login to proceed. User is the owner/creator of the comment.</p>
+</li>
+<li>
+<p>Test case: (If comment ID 123 is under current forum thread) + <code>updateThread cId/123 cContent/This is a new content</code><br>
+Expected: The new comment content will be updated in the CommentStorage, and a success message will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: (If comment ID 123 does not exist in the forum book) + <code>updateThread cId/123 cContent/This is a new content</code><br>
+Expected: No comment content will be updated. Error details of invalid comment id will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: (If comment ID 123 is not under current forum thread) + <code>updateThread cId/123 cContent/This is a new content</code><br>
+Expected: No comment content will be updated. Error details of entity is not under scope will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: <code>updateThread cId/ cContent/</code><br>
+Expected: No comment content will be updated. Error details shown in the result display panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-thread"><a class="link" href="#deleting-a-thread">H.11. Deleting a thread</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a forum thread by thread creator or admin.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must login to proceed. User is the owner/creator of the forum thread.</p>
+</li>
+<li>
+<p>Test case: (If thread ID 123 is under current module) + <code>deleteThread tId/123</code><br>
+Expected: The new thread title will be deleted in the ForumThreadStorage, and a success message will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: (If thread ID 123 does not exist in the forum book) + <code>deleteThread tId/123</code><br>
+Expected: No thread title will be deleted. Error details of invalid thread id will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: (If thread ID 123 is not under current module) + <code>deleteThread tId/123</code><br>
+Expected: No thread title will be deleted. Error details of entity is not under scope will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: <code>deleteThread tId/</code><br>
+Expected: No thread title will be deleted. Error details shown in the result display panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-comment"><a class="link" href="#deleting-a-comment">H.12. Deleting a comment</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a comment by comment creator or admin.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must login to proceed. User is the owner/creator of the comment.</p>
+</li>
+<li>
+<p>Test case: (If comment ID 123 is under current forum thread) + <code>deleteComment cId/123</code><br>
+Expected: The new comment content will be deleted in the CommentStorage, and a success message will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: (If comment ID 123 does not exist in the forum book) + <code>deleteComment cId/123</code><br>
+Expected: No comment content will be deleted. Error details of invalid comment id will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: (If comment ID 123 is not under current forum thread) + <code>deleteComment cId/123</code><br>
+Expected: No comment content will be deleted. Error details of entity is not under scope will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: <code>deleteComment cId/</code><br>
+Expected: No comment content will be deleted. Error details shown in the result display panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-modules"><a class="link" href="#listing-all-modules">H.13. Listing all modules</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing all the modules in the forun book by user or admin.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must login to proceed.</p>
+</li>
+<li>
+<p>Test case: <code>listModule</code><br>
+Expected: A list of modules in the ModuleStorage will be shown in the result display panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-module-to-list-all-threads"><a class="link" href="#selecting-a-module-to-list-all-threads">H.14. Selecting a module to list all threads</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing all the forum threads under certain module in the forun book by user or admin.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must login to proceed. The module code entered by user should exist in the ModuleStorage.</p>
+</li>
+<li>
+<p>Test case: <code>selectModule mCode/CS2113</code><br>
+Expected: A list of forum threads under module CS2113 in the ForumThreadStorage will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: <code>selectModule mCode/</code><br>
+Expected: No forum thread will be listed out. Error details shown in the result display panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-thread-to-list-all-comments"><a class="link" href="#selecting-a-thread-to-list-all-comments">H.15. Selecting a thread to list all comments</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing all the comments under certain forum thread in the forun book by user or admin.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must login to proceed. The thread Id entered by user should exist in the ForumThreadStorage.</p>
+</li>
+<li>
+<p>Test case: <code>selectThread tId/123</code><br>
+Expected: A list of comments under thread ID 123 in the ForumThreadStorage will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: <code>selectModule tId/</code><br>
+Expected: No comment will be listed out. Error details shown in the result display panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">H.16. Deleting a module</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2539,7 +2801,7 @@ Expected: Since the module <code>CS2113</code> has been deleted. This command sh
 </div>
 </div>
 <div class="sect2">
-<h3 id="updating-password"><a class="link" href="#updating-password">H.8. Updating password</a></h3>
+<h3 id="updating-password"><a class="link" href="#updating-password">H.17. Updating password</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2564,7 +2826,7 @@ Expected: Since the given user <code>abcd</code> has not been added to the UserS
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-user"><a class="link" href="#deleting-a-user">H.9. Deleting a user</a></h3>
+<h3 id="deleting-a-user"><a class="link" href="#deleting-a-user">H.18. Deleting a user</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2589,7 +2851,7 @@ Expected: Since the given user <code>abcd</code> does not exist in the UserStora
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">H.10. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">H.19. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2609,7 +2871,7 @@ Expected: Since the given user <code>abcd</code> does not exist in the UserStora
 </div>
 </div>
 <div class="sect2">
-<h3 id="login"><a class="link" href="#login">H.11. Login</a></h3>
+<h3 id="login"><a class="link" href="#login">H.20. Login</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2645,4 +2907,4 @@ Expected: Since the given user <code>abcd</code> does not exist in the UserStora
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 05:01:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 08:58:28 UTC</div></div></div></body></html>

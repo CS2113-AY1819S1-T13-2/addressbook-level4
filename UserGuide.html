@@ -83,13 +83,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>find m/CS2113 java</code></strong> : finding threads associated with content, <code>java</code>, under module <code>CS2113</code></p>
+<p><strong><code>login uName/user1 uPass/user1</code></strong>: login as <code>user1</code>, the user&#8217;s information will be shown in the top right corner, <code>user1(User), blocked</code>. The content in the bracket denote the user type, be it admin or user. The <code>blocked</code> denotes that the user is blocked, he/she is unable to create threads or comments.</p>
 </li>
 <li>
-<p><strong><code>create m/CS2113 t/Is there mid-terms?</code></strong> : create a forumThread tittled as <code>Is there mid-terms?</code> under module <code>CS2113</code>.</p>
+<p><strong><code>selectModule m/CS2113</code></strong> : finding threads under module <code>CS2113</code></p>
 </li>
 <li>
-<p><strong><code>like m/CS2113 i/1</code></strong> : like the forumThread with <code>index 1</code> in module <code>CS2113</code></p>
+<p><strong><code>createThread mCode/CS2113 tTitle/Is there mid-terms? cContent/I am taking this sem.</code></strong> : create a forumThread tittled as <code>Is there mid-terms?</code> under module <code>CS2113</code>.</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -115,13 +115,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>addUser uName/USER_NAME uPass/USER_PASSWORD</code>, <code>NAME</code> is a parameter which can be used as <code>addUser uName/john uPass/123</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>create m/MODULE_NAME t/THREAD_NAME [c/REPLY_MESSAGE]</code> can be used as <code>create m/CS2113 t/what is this module like? c/I heard that the workload is very heavy</code> or as <code>create m/CS2113 t/what is this module like?</code>.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>mCode/CS2113 tTitle/Is there mid-terms?</code>, <code>tTitle/Is there mid-terms? mCode/CS2113</code> is also acceptable.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>m/CS2113 t/Is there mid-terms?</code>, <code>t/Is there mid-terms? m/CS2113</code> is also acceptable.</p>
+<p>Command keywords are case sensitive. e.g. <code>adduser</code>, <code>DELETECOMMENT</code> is not recognised.</p>
 </li>
 </ul>
 </div>
@@ -579,7 +579,7 @@ e.g <code>updatePass uName/john uPass/098</code></p>
 e.g <code>deleteUser uName/john</code></p>
 </li>
 <li>
-<p><strong>Help</strong></p>
+<p><strong>Help</strong>: <code>help</code></p>
 </li>
 <li>
 <p><strong>createThread</strong> : <code>createThread mCode/MODULE CODE tTitle/THREAD TITLE cContent/COMMENT CONTENT</code><br>
@@ -606,7 +606,7 @@ e.g <code>deleteThread tId/1</code></p>
 e.g <code>deleteComment cId/1</code></p>
 </li>
 <li>
-<p><strong>listModule</strong></p>
+<p><strong>listModule</strong>: <code>listModule</code></p>
 </li>
 <li>
 <p><strong>selectModule</strong> : <code>selectModule mCode/MODULE CODE</code><br>
@@ -630,4 +630,4 @@ e.g <code>login uName/MyName uPass/password</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 08:58:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 12:35:22 UTC</div></div></div></body></html>

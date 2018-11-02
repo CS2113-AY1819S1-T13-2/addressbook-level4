@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Forum Book - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Forum Book - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">ForumBook</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-T13-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Forum Book - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team CS2113 T13-2</code>      Since: <code>Aug 2018</code>      Licence: <code>MIT</code></p>
@@ -74,25 +74,25 @@
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#announcing-new-announcement">G.2. Announcing new announcement</a></li>
-<li><a href="#checking-new-announcement">G.3. Checking new announcement</a></li>
-<li><a href="#blocking-user-from-posting">G.4. Blocking user from posting</a></li>
-<li><a href="#setting-a-user-as-admin-or-setting-an-admin-as-user">G.5. Setting a user as admin or setting an admin as user</a></li>
-<li><a href="#creating-a-module">G.6. Creating a module</a></li>
-<li><a href="#creating-a-thread">G.7. Creating a thread</a></li>
-<li><a href="#creating-a-comment">G.8. Creating a comment</a></li>
-<li><a href="#updating-a-thread-title">G.9. Updating a thread title</a></li>
-<li><a href="#updating-a-comment-content">G.10. Updating a comment content</a></li>
-<li><a href="#deleting-a-thread">G.11. Deleting a thread</a></li>
-<li><a href="#deleting-a-comment">G.12. Deleting a comment</a></li>
-<li><a href="#listing-all-modules">G.13. Listing all modules</a></li>
-<li><a href="#selecting-a-module-to-list-all-threads">G.14. Selecting a module to list all threads</a></li>
-<li><a href="#selecting-a-thread-to-list-all-comments">G.15. Selecting a thread to list all comments</a></li>
-<li><a href="#deleting-a-module">G.16. Deleting a module</a></li>
-<li><a href="#updating-password">G.17. Updating password</a></li>
-<li><a href="#deleting-a-user">G.18. Deleting a user</a></li>
-<li><a href="#saving-data">G.19. Saving data</a></li>
-<li><a href="#login">G.20. Login</a></li>
+<li><a href="#registering-and-logging-in">G.2. Registering and logging in</a></li>
+<li><a href="#announcing-new-announcement">G.3. Announcing new announcement</a></li>
+<li><a href="#checking-new-announcement">G.4. Checking new announcement</a></li>
+<li><a href="#blocking-user-from-posting">G.5. Blocking user from posting</a></li>
+<li><a href="#setting-a-user-as-admin-or-setting-an-admin-as-user">G.6. Setting a user as admin or setting an admin as user</a></li>
+<li><a href="#creating-a-module">G.7. Creating a module</a></li>
+<li><a href="#creating-a-thread">G.8. Creating a thread</a></li>
+<li><a href="#creating-a-comment">G.9. Creating a comment</a></li>
+<li><a href="#updating-a-thread-title">G.10. Updating a thread title</a></li>
+<li><a href="#updating-a-comment-content">G.11. Updating a comment content</a></li>
+<li><a href="#deleting-a-thread">G.12. Deleting a thread</a></li>
+<li><a href="#deleting-a-comment">G.13. Deleting a comment</a></li>
+<li><a href="#listing-all-modules">G.14. Listing all modules</a></li>
+<li><a href="#selecting-a-module-to-list-all-threads">G.15. Selecting a module to list all threads</a></li>
+<li><a href="#selecting-a-thread-to-list-all-comments">G.16. Selecting a thread to list all comments</a></li>
+<li><a href="#deleting-a-module">G.17. Deleting a module</a></li>
+<li><a href="#updating-password">G.18. Updating password</a></li>
+<li><a href="#deleting-a-user">G.19. Deleting a user</a></li>
+<li><a href="#saving-data">G.20. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -1688,7 +1688,47 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="announcing-new-announcement"><a class="link" href="#announcing-new-announcement">G.2. Announcing new announcement</a></h3>
+<h3 id="registering-and-logging-in"><a class="link" href="#registering-and-logging-in">G.2. Registering and logging in</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Registering a new user</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: username must not be registered before.</p>
+</li>
+<li>
+<p>Test case: <code>addUser uName/john uPass/123</code>
+Expected: the user <code>john</code> will be added to the UserStorage if there is no duplicate in the UserStorage.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Loggin in</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>login uName/abcd uPass/123</code>
+Expected: Log in with a random username and password that has not been registered. An error message will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: <code>login uName/john uPass/234</code>
+Expected: Log in with a registered username and a wrong password. An error message will be shown in the result display panel.</p>
+</li>
+<li>
+<p>Test case: <code>login uName/john uPass/123</code>
+Expected: Log in with a registered username and correct password, a success message will be shown in the result display panel.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="announcing-new-announcement"><a class="link" href="#announcing-new-announcement">G.3. Announcing new announcement</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1713,7 +1753,7 @@ Expected: No announcement will be posted. Error details shown in the result disp
 </div>
 </div>
 <div class="sect2">
-<h3 id="checking-new-announcement"><a class="link" href="#checking-new-announcement">G.3. Checking new announcement</a></h3>
+<h3 id="checking-new-announcement"><a class="link" href="#checking-new-announcement">G.4. Checking new announcement</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1734,7 +1774,7 @@ Expected: The latest announcement will show up in a pop up window and in the res
 </div>
 </div>
 <div class="sect2">
-<h3 id="blocking-user-from-posting"><a class="link" href="#blocking-user-from-posting">G.4. Blocking user from posting</a></h3>
+<h3 id="blocking-user-from-posting"><a class="link" href="#blocking-user-from-posting">G.5. Blocking user from posting</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1759,7 +1799,7 @@ Expected: Since the given user has not been added to the UserStorage, an error m
 </div>
 </div>
 <div class="sect2">
-<h3 id="setting-a-user-as-admin-or-setting-an-admin-as-user"><a class="link" href="#setting-a-user-as-admin-or-setting-an-admin-as-user">G.5. Setting a user as admin or setting an admin as user</a></h3>
+<h3 id="setting-a-user-as-admin-or-setting-an-admin-as-user"><a class="link" href="#setting-a-user-as-admin-or-setting-an-admin-as-user">G.6. Setting a user as admin or setting an admin as user</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1784,7 +1824,7 @@ Expected: Since the given user has not been added to the UserStorage, an error m
 </div>
 </div>
 <div class="sect2">
-<h3 id="creating-a-module"><a class="link" href="#creating-a-module">G.6. Creating a module</a></h3>
+<h3 id="creating-a-module"><a class="link" href="#creating-a-module">G.7. Creating a module</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1809,7 +1849,7 @@ Expected: No module will be added. Error details shown in the result display pan
 </div>
 </div>
 <div class="sect2">
-<h3 id="creating-a-thread"><a class="link" href="#creating-a-thread">G.7. Creating a thread</a></h3>
+<h3 id="creating-a-thread"><a class="link" href="#creating-a-thread">G.8. Creating a thread</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1834,7 +1874,7 @@ Expected: No module will be added. Error details shown in the result display pan
 </div>
 </div>
 <div class="sect2">
-<h3 id="creating-a-comment"><a class="link" href="#creating-a-comment">G.8. Creating a comment</a></h3>
+<h3 id="creating-a-comment"><a class="link" href="#creating-a-comment">G.9. Creating a comment</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1859,7 +1899,7 @@ Expected: No comment will be added. Error details shown in the result display pa
 </div>
 </div>
 <div class="sect2">
-<h3 id="updating-a-thread-title"><a class="link" href="#updating-a-thread-title">G.9. Updating a thread title</a></h3>
+<h3 id="updating-a-thread-title"><a class="link" href="#updating-a-thread-title">G.10. Updating a thread title</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1892,7 +1932,7 @@ Expected: No thread title will be updated. Error details shown in the result dis
 </div>
 </div>
 <div class="sect2">
-<h3 id="updating-a-comment-content"><a class="link" href="#updating-a-comment-content">G.10. Updating a comment content</a></h3>
+<h3 id="updating-a-comment-content"><a class="link" href="#updating-a-comment-content">G.11. Updating a comment content</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1925,7 +1965,7 @@ Expected: No comment content will be updated. Error details shown in the result 
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-thread"><a class="link" href="#deleting-a-thread">G.11. Deleting a thread</a></h3>
+<h3 id="deleting-a-thread"><a class="link" href="#deleting-a-thread">G.12. Deleting a thread</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1958,7 +1998,7 @@ Expected: No thread title will be deleted. Error details shown in the result dis
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-comment"><a class="link" href="#deleting-a-comment">G.12. Deleting a comment</a></h3>
+<h3 id="deleting-a-comment"><a class="link" href="#deleting-a-comment">G.13. Deleting a comment</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1991,7 +2031,7 @@ Expected: No comment content will be deleted. Error details shown in the result 
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-modules"><a class="link" href="#listing-all-modules">G.13. Listing all modules</a></h3>
+<h3 id="listing-all-modules"><a class="link" href="#listing-all-modules">G.14. Listing all modules</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2012,7 +2052,7 @@ Expected: A list of modules in the ModuleStorage will be shown in the result dis
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-module-to-list-all-threads"><a class="link" href="#selecting-a-module-to-list-all-threads">G.14. Selecting a module to list all threads</a></h3>
+<h3 id="selecting-a-module-to-list-all-threads"><a class="link" href="#selecting-a-module-to-list-all-threads">G.15. Selecting a module to list all threads</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2037,7 +2077,7 @@ Expected: No forum thread will be listed out. Error details shown in the result 
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-thread-to-list-all-comments"><a class="link" href="#selecting-a-thread-to-list-all-comments">G.15. Selecting a thread to list all comments</a></h3>
+<h3 id="selecting-a-thread-to-list-all-comments"><a class="link" href="#selecting-a-thread-to-list-all-comments">G.16. Selecting a thread to list all comments</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2062,7 +2102,7 @@ Expected: No comment will be listed out. Error details shown in the result displ
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">G.16. Deleting a module</a></h3>
+<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">G.17. Deleting a module</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2087,7 +2127,7 @@ Expected: Since the module <code>CS2113</code> has been deleted. This command sh
 </div>
 </div>
 <div class="sect2">
-<h3 id="updating-password"><a class="link" href="#updating-password">G.17. Updating password</a></h3>
+<h3 id="updating-password"><a class="link" href="#updating-password">G.18. Updating password</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2112,7 +2152,7 @@ Expected: Since the given user <code>abcd</code> has not been added to the UserS
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-user"><a class="link" href="#deleting-a-user">G.18. Deleting a user</a></h3>
+<h3 id="deleting-a-user"><a class="link" href="#deleting-a-user">G.19. Deleting a user</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2137,7 +2177,7 @@ Expected: Since the given user <code>abcd</code> does not exist in the UserStora
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.19. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">G.20. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2156,41 +2196,5 @@ Expected: Since the given user <code>abcd</code> does not exist in the UserStora
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="login"><a class="link" href="#login">G.20. Login</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Login test</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Log in with a random User Name and Password that has not been registered.</p>
-</li>
-<li>
-<p>Log in with a registered user name and a random Password.</p>
-</li>
-<li>
-<p>Log in with a registered user name and password, then log in to the same or other account.</p>
-</li>
-</ol>
 </div>
-</li>
-<li>
-<p>AddUser test</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Register a user. Once successful, register the same user again.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 01:33:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 06:42:37 UTC</div></div></div></body></html>

@@ -1794,7 +1794,7 @@ Expected: The latest announcement will show up in a pop up window and in the res
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: Current user must login as an admin. The given user should be in the UserStorage.</p>
+<p>Prerequisites: Current user must login as an admin. The given user should not be an admin and should be in the UserStorage.</p>
 </li>
 <li>
 <p>Test case: <code>blockUser uName/john block/true</code><br>
@@ -1819,7 +1819,7 @@ Expected: Since the given user has not been added to the UserStorage, an error m
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: Current user must login as an admin. Admin is unable to set/revert himself/herself to admin/user. The given user must be in UserStorage.</p>
+<p>Prerequisites: Current user must login as an admin. Admin is unable to set/revert himself/herself to admin/user. The given user must not been blocked and must be in UserStorage.</p>
 </li>
 <li>
 <p>Test case: <code>setAdmin uName/john set/true</code><br>
@@ -2234,4 +2234,4 @@ Expected: Since the given user <code>abcd</code> does not exist in the UserStora
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-09 09:09:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-09 14:38:13 UTC</div></div></div></body></html>

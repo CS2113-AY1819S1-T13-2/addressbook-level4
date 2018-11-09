@@ -208,6 +208,29 @@ Format: <code>createModule mCode/MODULE_CODE mTitle/MODULE_TITLE</code></p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="updating-a-module-code-updatemodule-code"><a class="link" href="#updating-a-module-code-updatemodule-code">Updating a module : <code>updateModule</code></a></h3>
+<div class="paragraph">
+<p>Update an existing module by admin. Note that either one of mCode and mTitle has to be specified<br>
+Format: <code>updateModule mId/MODULE_ID [mCode/MODULE_CODE] [mTitle/MODULE_TITLE]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>updateModule mId/3 mCode/CS1221</code></p>
+</li>
+<li>
+<p><code>updateModule mId/3 mTitle/Random CS module</code></p>
+</li>
+<li>
+<p><code>updateModule mId/3 mCode/CS1221 mTitle/Random CS module</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="deleting-a-module-code-deletemodule-code"><a class="link" href="#deleting-a-module-code-deletemodule-code">Deleting a module : <code>deleteModule</code></a></h3>
 <div class="paragraph">
 <p>Delete an existing module by admin.<br>
@@ -289,22 +312,25 @@ Format: <code>deleteUser uName/USER_NAME</code></p>
 <p><code>CheckAnnouncementCommand</code>: Checks for latest announcement.</p>
 </li>
 <li>
-<p><code>BlockUserFromCreatingCommand</code>: Blocks a user from posting either new threads or comments.</p>
+<p><code>BlockUserFromCreatingCommand</code>: Blocks an existing user from posting either new threads or comments.</p>
 </li>
 <li>
-<p><code>SetAdminCommand</code>: Sets a user as admin or reverts an admin to user.</p>
+<p><code>SetAdminCommand</code>: Sets an existing user as admin or reverts an existing admin to user.</p>
 </li>
 <li>
 <p><code>CreateModuleCommand</code>: Creates a module by admin.</p>
 </li>
 <li>
-<p><code>DeleteModuleCommand</code>: Deletes a specific module by admin.</p>
+<p><code>UpdateModuleCommand</code>: Updates an existing module by admin.</p>
 </li>
 <li>
-<p><code>AdminUpdatePasswordCommand</code>: Updates a certain user&#8217;s password by admin.</p>
+<p><code>DeleteModuleCommand</code>: Deletes an existing module by admin.</p>
 </li>
 <li>
-<p><code>DeleteUserCommand</code>: Deletes a certain user by admin.</p>
+<p><code>AdminUpdatePasswordCommand</code>: Updates an existing user&#8217;s password by admin.</p>
+</li>
+<li>
+<p><code>DeleteUserCommand</code>: Deletes an existing user by admin.</p>
 </li>
 </ul>
 </div>
@@ -352,7 +378,15 @@ Format: <code>deleteUser uName/USER_NAME</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The admin executes <code>deleteModule mCode/CS2113</code> to delete specific module. The <code>deleteModule</code> calls the <code>UnitOfWork.getModuleRepository().removeModule(module);</code> and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be save into <code>ForumBookStorage</code>.</p>
+<p>Step 6. The admin executes <code>updateModule mId/3 mTitle/Software Eng and OOP</code> to update the specific module. The <code>updateModule</code> calls the <code>UnitOfWork.getModuleRepository().updateModule(module)</code> and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be save into <code>ForumBookStorage</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SDUpdateModule.png" alt="SDUpdateModule" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 7. The admin executes <code>deleteModule mCode/CS2113</code> to delete specific module. The <code>deleteModule</code> calls the <code>UnitOfWork.getModuleRepository().removeModule(module);</code> and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be save into <code>ForumBookStorage</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -360,7 +394,7 @@ Format: <code>deleteUser uName/USER_NAME</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 7. The admin executes <code>updatePass uName/john uPass/098</code> to update the user john&#8217;s password. The <code>updatePass</code> calls the <code>UnitOfWork.getUserRepository().updateUser(user)</code> and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be save into <code>ForumBookStorage</code>.</p>
+<p>Step 8. The admin executes <code>updatePass uName/john uPass/098</code> to update the user john&#8217;s password. The <code>updatePass</code> calls the <code>UnitOfWork.getUserRepository().updateUser(user)</code> and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be save into <code>ForumBookStorage</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -368,7 +402,7 @@ Format: <code>deleteUser uName/USER_NAME</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 8. The admin executes <code>deleteUser uName/john</code> to delete the user john. The <code>deleteUser</code> calls the ` UnitOfWork.getUserRepository().deleteUser(userToDelete)` and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be save into <code>ForumBookStorage</code>.</p>
+<p>Step 9. The admin executes <code>deleteUser uName/john</code> to delete the user john. The <code>deleteUser</code> calls the ` UnitOfWork.getUserRepository().deleteUser(userToDelete)` and then <code>UnitOfWork.commit()</code>, causing another modified forum book state to be save into <code>ForumBookStorage</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -390,4 +424,4 @@ If the syntax of a command is wrong, the program will prompt the user to try aga
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-08 14:04:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-09 02:29:38 UTC</div></div></div></body></html>

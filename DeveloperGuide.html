@@ -770,7 +770,8 @@ By default, we have <code>JsonFileStorage</code> which stores and reads data fro
 <div class="paragraph">
 <p><code>IEncryptor</code> defines interface to encrypt application data, it should be injected to <code>IStorage</code> providing a encryption/
 decryption layer just before data writes and just after data reads. By default, <code>JsonFileStorage</code> uses <code>SimpleEncryptor</code>
-which is a simple 'OR' encryptor.</p>
+which is a simple 'OR' encryptor. A more secure encryption algorithm can be achieved by implementing <code>IEncryptor</code>
+interface.</p>
 </div>
 <div class="paragraph">
 <p><code>IForumBookStorage</code> defines interface to access data entities</p>
@@ -2220,4 +2221,4 @@ Expected: Since the given user <code>abcd</code> does not exist in the UserStora
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 15:43:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 10:15:19 UTC</div></div></div></body></html>

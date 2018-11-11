@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Zhao Mingda - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">ForumBook</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S1-T13-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Zhao Mingda - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-forumbook"><a class="link" href="#project-forumbook">PROJECT: ForumBook</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ForumBook is a desktop forum application which allows students to exchange information of the courses offered by their school. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in OOP fashion.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nuscs2113-ay1819s1.github.io/dashboard/#=undefined&amp;search=meowzz95">Functional code</a>]</p>
+</li>
+<li>
+<p><strong>Main feature implemented:</strong>: A underlying storage system that powers the application and manager
+classes that provide APIs for other developers to manipulate application database in a robust way.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Takes care of data storage, data encryption, and provide APIs for accessing the data.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>IStorage</code>: A interface that defines a storage that handles read/write to storage device/service</p>
+</li>
+<li>
+<p><code>IEncryptor</code>: A interface that defines a encryptor who knows an algorithm to encrypt/decrypt data</p>
+</li>
+<li>
+<p><code>SimpleEncryptor</code>: A concrete implementation of <code>IEncryptor</code>, it uses a simple and insecure 'OR' encryption for demoing the ability of data encryption in this application</p>
+</li>
+<li>
+<p><code>JsonFileStorage</code>: A concrete implementation of <code>IStorage</code>, it takes an <code>IEntryptor</code>(or by default it uses <code>SimpleEncryptor</code>) and use it to write encrypted json data to hard disk / read encrypted json data from hard disk</p>
+</li>
+<li>
+<p><code>BaseEntityStorage</code>: A base class for all types of entity storage, it uses generics to define the underlying <code>List</code> and a flag to keep track of whether this storage has been modified.</p>
+</li>
+<li>
+<p><code>[Entity]Storage</code>: Storage classes who extend <code>BaseEntityStorage</code> eg: <code>UserStorage</code></p>
+</li>
+<li>
+<p><code>RunningId</code>: Singleton that handles Id generating, this mimics an auto-increment primary key field in a relational database, but a much simplified implementation.</p>
+</li>
+<li>
+<p><code>StorageMapping</code>: Singleton that maps class to file path, avoid magic numbers(strings).</p>
+</li>
+<li>
+<p><code>IForumBookStorage</code>: A interface, it defines a manager class that controls the loading/committing/accessing of data.</p>
+</li>
+<li>
+<p><code>I[Entity]Repository</code>: Entity repository interfaces that define the APIs of manipulating application data</p>
+</li>
+<li>
+<p><code>[Entity]Repository</code>: Concrete implementations of <code>I[Entity]Repository</code></p>
+</li>
+<li>
+<p><code>IUnitOfWork</code>: A interface, it defines a wrapper that groups one or more operations into a single transaction, ensure data consistency</p>
+</li>
+<li>
+<p><code>UnitOfWork</code>: A concrete implementation of <code>IUnitOfWork</code></p>
+</li>
+<li>
+<p><code>SampleDataGenerator</code>: A helper class to generate sample data after a fresh copy of this application is started</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Justification: This structure enables the application to manage multiple entities in a robust way.</p>
+</li>
+<li>
+<p>Highlights: This design takes data consistency and potential future storage possibilities(eg:store everything in a server) into account. Unit of work pattern ensures that even if one of a series of operation fails, the whole set of operation will not be saved, our data is always in a good shape.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor feature implemented</strong>: Added a <code>Context</code> class that manages user login status and provide API for other commands to check login status.</p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases <code>v1.1</code> - <code>v1.2</code> (2 releases) on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/168">#168</a></p>
+</li>
+<li>
+<p>Did cosmetic tweaks to existing contents of the Developer Guide: <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/5">#5</a>, <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/9">#9</a>, <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/17">#17</a>, <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/20">#20</a>, <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/64">#64</a>, <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/109">#109</a>, <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/121">#121</a>, <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/167">#167</a>，https://github.com/CS2113-AY1819S1-T13-2/main/pull/169[#169]</p>
+</li>
+<li>
+<p>Documented most(~95%) of new java code written.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed : <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/76">#76</a>, <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/77">#77</a>, <a href="https://github.com/CS2113-AY1819S1-T13-2/main/pull/78">#78</a></p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="security"><a class="link" href="#security">Security</a></h3>
+<div class="paragraph">
+<p>All data including user credential and application data are encrypted on your disk. You don&#8217;t need to worry
+about other people who have access to your computer steal your information.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Forum Book folder.`</p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: What if I forget my password?<br>
+<strong>A</strong>: Ask an admin to help, he/she has the privilege to reset your password.</p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: How do I uninstall this application?<br>
+<strong>A</strong>: Just delete the folder containing this application, it does not touch any other part of your computer.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="storage-component"><a class="link" href="#storage-component">Storage component</a></h3>
+<div class="paragraph">
+<p>The <code>Storage</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+</li>
+<li>
+<p>can save the Forum Book data in encrypted json format and read it back.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="storage"><a class="link" href="#storage">Storage</a></h3>
+<div class="sect3">
+<h4 id="design-consideration"><a class="link" href="#design-consideration">Design Consideration</a></h4>
+<div class="paragraph">
+<p>As the basis of the whole program, storage should be robust, efficient and stable at all the time.
+Data consistency and multi-thread access should be specially taken care of.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="overview-2"><a class="link" href="#overview-2">Overview</a></h4>
+<div class="paragraph">
+<p>ForumBook&#8217;s storage consists of six(6) parts.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>User</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Stores user information like username, password, email etc.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Announcement</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Stores announcement set by admin, multiple announcements can be saved in the storage.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Module</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Stores module information like module name, code etc.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>ForumThread</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Stores threads posted by users</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Comment</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Stores comments under threads</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>RunningId</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Used for generating auto incremented ID, each the above entity has a unique ID</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These components are stored separately in six files for performance, see below for detailed process of loading and saving.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="storage-structure"><a class="link" href="#storage-structure">Storage Structure</a></h4>
+<div class="paragraph">
+<p>To avoid unnecessary disk IO, each part of the storage is saved in a file located in <code>forumData</code> directory.
+All data manipulation must be done within an <code>IUnitOfWork</code> where developer has to commit if the data
+should be persistent on disk, or rollback if the exception is thrown somewhere during the transaction.</p>
+</div>
+<div class="paragraph">
+<p><code>IStorage</code> defines interface to access file systems, this handles how our program actually get/read data.
+By default, we have <code>JsonFileStorage</code> which stores and reads data from local hard disk. More storage options
+ can be achieved by implementing this interface. eg: <code>FtpStorage</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>IEncryptor</code> defines interface to encrypt application data, it should be injected to <code>IStorage</code> providing a encryption/
+decryption layer just before data writes and just after data reads. By default, <code>JsonFileStorage</code> uses <code>SimpleEncryptor</code>
+which is a simple 'OR' encryptor. A more secure encryption algorithm can be achieved by implementing <code>IEncryptor</code>
+interface.</p>
+</div>
+<div class="paragraph">
+<p><code>IForumBookStorage</code> defines interface to access data entities</p>
+</div>
+<div class="paragraph">
+<p><code>I*Repository</code> defines interface to how we can manipulate different entities.
+Each entity is managed by a repository, eg: <code>IUserRepository</code></p>
+</div>
+<div class="paragraph">
+<p><code>*Storage</code> is a thin wrapper for the <code>List</code> containing data objects, it keeps track of whether the underling list
+has been modified so that it can save some unnecessary disk IO if nothing changed when a <code>commit()</code> is issued.</p>
+</div>
+<div class="paragraph">
+<p>Data are saved in encrypted Json format, the encryption algorithm is provided by <code>IEncryptor</code></p>
+</div>
+<div class="paragraph">
+<p><code>RunningId</code> does not work as the other entities do, it has its own logic to make sure IDs are not repeated.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data-encryption"><a class="link" href="#data-encryption">Data Encryption</a></h3>
+<div class="paragraph">
+<p>Data encryption is done in a transparent layer.</p>
+</div>
+<div class="paragraph">
+<p>All data in this application is encrypted.</p>
+</div>
+<div class="paragraph">
+<p>A very simple, naive, and insecure encryption is implemented in <code>SimpleEncryptor</code>, this is only for demoing the ability of
+encrypting data in this application. However, a more secure algorithm can be easily added into the app by
+implementing the <code>IEncryptor</code> interface and provide it into <code>IStorage</code>.</p>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 10:15:20 UTC</div></div></div></body></html>
